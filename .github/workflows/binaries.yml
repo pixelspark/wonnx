@@ -20,6 +20,8 @@ jobs:
             archive: tar.gz tar.xz
           - target: x86_64-apple-darwin
             archive: zip
+          - target: aarch64-apple-darwin
+            archive: zip
     steps:
       - uses: actions/checkout@master
       - name: Compile and release
@@ -28,3 +30,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RUSTTARGET: ${{ matrix.target }}
           ARCHIVE_TYPES: ${{ matrix.archive }}
+          SRC_DIR: wonnx-cli
