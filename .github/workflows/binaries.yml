@@ -1,12 +1,14 @@
 # Build and publish Rust binaries for published releases
 
+name: Release Rust binaries
+
 on:
   release:
     types: [created]
 
 jobs:
   release:
-    name: release ${{ matrix.target }}
+    name: Release ${{ matrix.target }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
